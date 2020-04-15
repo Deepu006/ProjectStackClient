@@ -8,6 +8,7 @@ import AddInventory from './components/inventories/AddInventory';
 import AllTablebooking from './components/tablebooking/ListOfTableBookings';
 import Tablebooking from './components/tablebooking/TableBooking';
 import Application from './components/application/Application';
+import ShowApplicants from './components/application/ShowApplicants';
 import LoginForm from './components/auth/Login';
 import AdminLoginForm from './components/auth/AdminLogin';
 import RegisterForm from './components/auth/Register';
@@ -54,6 +55,7 @@ function AppRouter(){
             <Route exact path='/inventories'  component={Invetory} />
             <Route exact path='/updateInventory'  component={UpdateInventory} />
             <Route exact path='/addInventory'  component={AddInventory} />
+            <Route exact path='/ShowApplicants'  component={ShowApplicants} />
             <Route exact path='/listOfTableBookings'  component={AllTablebooking} />
             <Route exact path='/listOfTechnicalQueries'  component={AllTechnicalQueries} />
 
