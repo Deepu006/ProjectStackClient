@@ -4,3 +4,17 @@
     margin-top: 2%;
     padding: auto;
 }
+
+.ShowApplicants{
+    width: 40%;
+    margin: auto;
+    margin-top: 2%;
+    padding: auto;
+}
+
+#applicantList{
+    width: 80%;
+    margin: auto;
+    margin-top: 2%;
+    padding: auto;
+}
