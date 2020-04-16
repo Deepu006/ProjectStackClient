@@ -126,7 +126,7 @@ const RegisterForm = () => {
             };
         
             axios
-                .post('https://peddirst.herokuapp.com/api/user/register', data, config)
+                .post('https://projectstackserver.herokuapp.com/api/user/register', data, config)
                 .then(response => {
                     console.log(response, "response")
                     history.push("/login");
