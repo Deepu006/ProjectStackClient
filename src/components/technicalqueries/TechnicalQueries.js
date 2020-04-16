@@ -52,7 +52,7 @@ class TechnicalQueryForm extends React.Component {
 
         let token = sessionStorage.getItem('token');
 
-        fetch("http://localhost:5000/api/technicalqueries",{
+        fetch("https://backend-node-js.herokuapp.com/api/technicalqueries",{
             method:"POST",
         
             headers:{
@@ -72,7 +72,7 @@ class TechnicalQueryForm extends React.Component {
                     email: this.state.email
                 }
                 
-                axios.post('http://localhost:5000/email', config)
+                axios.post('https://backend-node-js.herokuapp.com/email', config)
                     .then(res => console.log(res.data));
 
                 document.getElementById("name").value="";
