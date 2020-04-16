@@ -79,7 +79,7 @@ const Header = props => {
         console.log("I am here")
         setShow(false);
         sessionStorage.removeItem('token');
-        history.push("/register");
+        history.push("/login");
         
   
 

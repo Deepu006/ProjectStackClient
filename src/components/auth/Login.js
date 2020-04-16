@@ -116,7 +116,7 @@ const LoginForm = () => {
                   let decodeddata = decode(response.data.token);
                   console.log(decodeddata);
                   sessionStorage.setItem('token', response.data.token);
-                  history.push("/tablebooking");
+                  history.push("/home");
                   })
                   .catch(error => {
                       console.log('error ', error);
