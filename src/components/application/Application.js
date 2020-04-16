@@ -152,7 +152,7 @@ render(){
         <CommonBackgroundPage />
         
         
-        <div className="application">
+        <div className="application" style={{position:"relative"}}>
             <h1>Join Us!</h1>
             <Form>
             <Form.Row>
