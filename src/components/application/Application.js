@@ -2,6 +2,7 @@ import React from 'react';
 import { Form, Button, Col} from "react-bootstrap";
 import axios from 'axios';
 import  "./application.css";
+import CommonBackgroundPage from '../CommonBackground';
 
 
   class Application extends React.Component {
@@ -76,9 +77,11 @@ import  "./application.css";
     submitData()
     {
 
+        //let token = sessionStorage.getItem('token');
         let config = {
             headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json'//,
+        //    "x-auth-token": token
             }
         };
         console.log(config)
@@ -93,15 +96,23 @@ import  "./application.css";
         }
 
         axios.post('http://localhost:5000/api/application/', body, config).then(response => {
+//            axios.post('https://backend-node-js.herokuapp.com/api/application/', body, config).then(response => {
                   console.log(response, "response")
             //   let decodeddata = decode(response.data.token);
             //   console.log(decodeddata);
             //   sessionStorage.setItem('token', response.data.token);
+                    document.getElementById("firstname").value="";
+                    document.getElementById("lastname").value = "";
+                    document.getElementById("phone").value = "";
+                    document.getElementById("email").value = "";
+                    document.getElementById("position").value = "";
+                    document.getElementById("resume").value = "";
+                    alert("Entry created");
               })
               .catch(error => {
                   console.log('error ', error);
                   console.log(error.response)
-              
+                    
                   
                   });
       
@@ -136,6 +147,9 @@ import  "./application.css";
 
 render(){
     return (
+
+        <>
+        <CommonBackgroundPage />
         
         
         <div className="application">
@@ -164,7 +178,7 @@ render(){
                     <Form.Control type="email" onChange={this.handleEmailChange} placeholder="xyz@example.com" />
                 </Form.Group>
 
-                <Form.Group controlId="postion">
+                <Form.Group controlId="position">
                     <Form.Label>Position's Applied For</Form.Label>
                     <Form.Control type="text" onChange={this.handlePositionChange} placeholder="server/counter/kitchen" />
                 </Form.Group>
@@ -180,7 +194,7 @@ render(){
         </div>
 
         
-        
+        </>
     );
 }
 

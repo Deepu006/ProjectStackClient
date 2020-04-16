@@ -8,6 +8,7 @@ import AddInventory from './components/inventories/AddInventory';
 import AllTablebooking from './components/tablebooking/ListOfTableBookings';
 import Tablebooking from './components/tablebooking/TableBooking';
 import Application from './components/application/Application';
+import ShowApplicants from './components/application/ShowApplicants';
 import LoginForm from './components/auth/Login';
 import AdminLoginForm from './components/auth/AdminLogin';
 import RegisterForm from './components/auth/Register';
@@ -48,6 +49,7 @@ function AppRouter(){
             <Route exact path='/location' component={GoogleApiWrapper} />
             <Route exact path='/order' component={Order} />
             <Route exact path='/application' component={Application} />
+			<Route exact path='/ShowApplicants'  component={ShowApplicants} />
             <Route exact path='/cart'  component={Cart} />
             <Route exact path='/success'  component={Success} />
             <Route exact path='/menu'  component={Menu} />
