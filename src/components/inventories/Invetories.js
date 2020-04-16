@@ -24,7 +24,7 @@ class Inventories extends React.Component{
             }
         };
 
-        axios.get('http://localhost:5000/api/inventories', config)
+        axios.get('https://backend-node-js.herokuapp.com/api/inventories', config)
         .then(res => {
             // console.log(res.data);
             this.setState({inventories: res.data});
@@ -61,7 +61,7 @@ class Inventories extends React.Component{
     delete = (e) => {
         let token = sessionStorage.getItem('token');
 
-        fetch(`http://localhost:5000/api/inventories/${e.target.id}`, {
+        fetch(`https://backend-node-js.herokuapp.com/api/inventories/${e.target.id}`, {
             method:"DELETE",
             headers:{
                 "x-auth-token" : token
@@ -78,7 +78,7 @@ class Inventories extends React.Component{
             console.log(data)
             if(data.status == 0)
             {
-                axios.get('http://localhost:5000/api/inventories', config)
+                axios.get('https://backend-node-js.herokuapp.com/api/inventories', config)
                 .then(res => {
                     // console.log(res.data);
                     this.setState({inventories: res.data});

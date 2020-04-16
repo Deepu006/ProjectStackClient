@@ -68,7 +68,7 @@ class AddInventory extends React.Component {
     
         if(this.state.product != "" && this.state.description != "" && this.state.quantity != "" && this.state.buyingPrice != "")    
         { 
-            fetch("http://localhost:5000/api/inventories",{
+            fetch("https://backend-node-js.herokuapp.com/api/inventories",{
                 method:"POST",
                 headers:{
                     "Content-Type": "application/json",
@@ -84,19 +84,6 @@ class AddInventory extends React.Component {
                     data:data
                 })
             
-                // console.log(data)
-                // if(data.success !== 0)
-                // {
-                //     document.getElementById("name").value="";
-                //     document.getElementById("description").value = "";
-                //     document.getElementById("quantity").value = "";
-                //     document.getElementById("price").value = "";
-                //     alert("Data insserted successfully");
-                // }
-                // else
-                // {
-                //     alert("Error inserting data");
-                // }
                 
             })
         }

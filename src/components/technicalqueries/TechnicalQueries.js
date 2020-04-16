@@ -1,4 +1,5 @@
 import React from 'react';
+import {withRouter} from "react-router-dom";
 import { Form, Button} from "react-bootstrap";
 import axios from 'axios';
 import CommonBackgroundPage from '../CommonBackground';
@@ -80,6 +81,11 @@ class TechnicalQueryForm extends React.Component {
                 document.getElementById("query").value = "";
                
                 alert("Data insserted successfully");
+
+                this.props.history.push({
+                    pathname: "/",
+                    data:data
+                })
             }
             else
             {
@@ -127,4 +133,4 @@ class TechnicalQueryForm extends React.Component {
 };
 
 
-export default TechnicalQueryForm;
+export default withRouter(TechnicalQueryForm);

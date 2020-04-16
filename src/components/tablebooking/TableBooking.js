@@ -1,4 +1,5 @@
 import React from 'react';
+import {withRouter} from "react-router-dom";
 import { Form, Button} from 'react-bootstrap';
 import CommonBackgroundPage from '../CommonBackground';
 import  "./tablebooking.css";
@@ -59,7 +60,7 @@ class Tablebooking extends React.Component {
     {
         let token = sessionStorage.getItem('token');
       
-        fetch("http://localhost:5000/api/tablebookings",{
+        fetch("https://backend-node-js.herokuapp.com/api/tablebookings",{
             method:"POST",
             
             headers:{
@@ -78,6 +79,11 @@ class Tablebooking extends React.Component {
                 document.getElementById("noOfPerson").value = "";
                 document.getElementById("instructions").value = "";
                 alert("Data insserted successfully");
+
+                this.props.history.push({
+                    pathname: "/",
+                    data:data
+                })
             }
             else
             {
@@ -128,4 +134,4 @@ class Tablebooking extends React.Component {
 };
 
 
-export default Tablebooking;
+export default withRouter(Tablebooking);

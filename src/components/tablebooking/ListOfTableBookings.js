@@ -24,7 +24,7 @@ class ListOfTableBooking extends React.Component{
             }
         };
 
-        axios.get('http://localhost:5000/api/tablebookings', config)
+        axios.get('https://backend-node-js.herokuapp.com/api/tablebookings', config)
         .then(res => {
             // console.log(res.data);
             this.setState({tableBookings: res.data});
@@ -35,7 +35,7 @@ class ListOfTableBooking extends React.Component{
     delete = (e) => {
         let token = sessionStorage.getItem('token');
         //console.log(e.target.id);
-        fetch(`http://localhost:5000/api/tablebookings/${e.target.id}`, {
+        fetch(`https://backend-node-js.herokuapp.com/api/tablebookings/${e.target.id}`, {
             method:"DELETE",
             headers:{
                 "x-auth-token" : token
@@ -52,7 +52,7 @@ class ListOfTableBooking extends React.Component{
             console.log(data)
             if(data.status == 0)
             {
-                axios.get('http://localhost:5000/api/tablebookings', config)
+                axios.get('https://backend-node-js.herokuapp.com/api/tablebookings', config)
                 .then(res => {
                     // console.log(res.data);
                     this.setState({tableBookings: res.data});
