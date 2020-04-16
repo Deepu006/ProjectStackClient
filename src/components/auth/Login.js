@@ -110,7 +110,7 @@ const LoginForm = () => {
               };
           
               axios
-                  .post('https://peddirst.herokuapp.com/api/user/', data, config)
+                  .post('https://projectstackserver.herokuapp.com/api/user/', data, config)
                   .then(response => {
                       console.log(response, "response")
                   let decodeddata = decode(response.data.token);
