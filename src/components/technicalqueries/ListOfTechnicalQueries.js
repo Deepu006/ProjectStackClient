@@ -24,7 +24,7 @@ class ListOfTechnicalQueries extends React.Component{
             }
         };
 
-        axios.get('http://localhost:5000/api/technicalqueries', config)
+        axios.get('https://backend-node-js.herokuapp.com/api/technicalqueries', config)
         .then(res => {
             // console.log(res.data);
             this.setState({technicalQueries: res.data});
@@ -36,7 +36,7 @@ class ListOfTechnicalQueries extends React.Component{
     delete = (e) => {
         let token = sessionStorage.getItem('token');
         //console.log(e.target.id);
-        fetch(`http://localhost:5000/api/technicalqueries/${e.target.id}`, {
+        fetch(`https://backend-node-js.herokuapp.com/api/technicalqueries/${e.target.id}`, {
             method:"DELETE",
             headers:{
                 "x-auth-token" : token
@@ -53,7 +53,7 @@ class ListOfTechnicalQueries extends React.Component{
             console.log(data)
             if(data.status == 0)
             {
-                axios.get('http://localhost:5000/api/technicalqueries', config)
+                axios.get('https://backend-node-js.herokuapp.com/api/technicalqueries', config)
                 .then(res => {
                     // console.log(res.data);
                     this.setState({technicalQueries: res.data});

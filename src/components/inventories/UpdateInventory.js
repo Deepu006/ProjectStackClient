@@ -31,7 +31,7 @@ class UpdateInventory extends React.Component {
         let token = sessionStorage.getItem('token');
         
         console.log(this.props.location.data);
-        fetch(`http://localhost:5000/api/inventories/${this.props.location.data}`,{
+        fetch(`https://backend-node-js.herokuapp.com/api/inventories/${this.props.location.data}`,{
             headers: {
                 'x-auth-token': token
             }
@@ -89,7 +89,7 @@ class UpdateInventory extends React.Component {
 
         if(this.state.product != "" && this.state.description != "" && this.state.quantity != "" && this.state.buyingPrice != "")   
         {
-            fetch(`http://localhost:5000/api/inventories/update/${this.props.location.data}`,{
+            fetch(`https://backend-node-js.herokuapp.com/api/inventories/update/${this.props.location.data}`,{
                 method:"PUT",
                 headers:{
                     "Content-Type": "application/json",
