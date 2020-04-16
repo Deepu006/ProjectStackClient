@@ -71,7 +71,7 @@ export class MapContainer extends Component {
             "curr_latitude": this.state.lat,
             "curr_longitude": this.state.lng
         };
-        axios.post(`https://peddirst.herokuapp.com/api/location/`, data, config)
+        axios.post(`https://projectstackserver.herokuapp.com/api/location/`, data, config)
       .then(res => {
         const stores = res.data;
         this.setState({ stores });
